@@ -57,6 +57,20 @@ function ChangementDotSelected(index) {
 
 	allDots[index].classList.add("dot_selected");
 
+	
+
+	const slideContent = slides[index];
+
+	/* Ajout de l'image en fonction de l'index */
+
+	const slideImage = document.getElementById("slide-img");
+	slideImage.src= "./assets/images/slideshow/"+ slideContent.image;
+
+	/* Ajout de la tag line en fonction de l'index */ 
+
+	const slideTagline = document.getElementById("slide-tagline");
+	slideTagline.innerHTML = slideContent.tagLine;
+
 	/* Et je met à jour l'index de la diapo courante */
 	currentIndex = index;
 }
@@ -84,3 +98,10 @@ flecheDroiteEvent.addEventListener("click", function() {
 
 console.log(slides.length);
 
+/*test fonctionnement event listeners 
+
+flecheGaucheEvent.addEventListener ("click", function(){ alert("fleche gauche cliqué")});
+
+flecheDroiteEvent.addEventListener ("click", function(){alert("fleche droite cliqué")});
+
+*/
