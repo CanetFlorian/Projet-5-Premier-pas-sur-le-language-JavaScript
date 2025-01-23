@@ -57,7 +57,7 @@ function ChangementDotSelected(index) {
 
 	allDots[index].classList.add("dot_selected");
 
-	
+	/*Déclaration d'une variable regroupant le contenue des slides en fonction de l'index */ 
 
 	const slideContent = slides[index];
 
@@ -75,6 +75,7 @@ function ChangementDotSelected(index) {
 	currentIndex = index;
 }
 
+/* Déclaration des variables des flèches gauche et droite */
 
 let flecheGaucheEvent = document.querySelector("#banner .arrow_left");
 console.log(flecheGaucheEvent);
@@ -82,11 +83,15 @@ console.log(flecheGaucheEvent);
 let flecheDroiteEvent = document.querySelector("#banner .arrow_right");
 console.log(flecheDroiteEvent);
 
+/* Evenement au clic sur la flèche gauche */
+
 flecheGaucheEvent.addEventListener("click", function() {
    /* Utilisation d'un modulo pour avoir un carrousel circulaire , en effet grace à % slides.length me permet de revenir à la dernière diapo lorsque je suis au début et à l'index 0 lorsque je suis à la fin */
     let index = (currentIndex - 1 + slides.length) % slides.length; 
     ChangementDotSelected(index);
 });
+
+/* Evenement au clic sur la flèche droite */
 
 flecheDroiteEvent.addEventListener("click", function() {
     
